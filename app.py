@@ -7,19 +7,6 @@ import os
 
 load_dotenv()
 
-def dividir(a,b):
-    if b == 0:
-        raise ValueError("No se puede dividir por cero")
-    return a / b
-
-def verificar_division():
-    try:
-        print(dividir(10, 0))
-    except ValueError as e:
-        print(e)
-
-verificar_division()
-
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{os.getenv('DB_USERNAME')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
