@@ -13,7 +13,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{os.getenv('DB_USERNAM
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
-init_db(app)
+#init_db(app)
 
 @app.route('/')
 def index():

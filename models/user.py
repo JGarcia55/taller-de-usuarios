@@ -1,5 +1,6 @@
 from db import db
 from sqlalchemy import text
+from marshmallow import Schema, fields
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -10,4 +11,7 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, nullable = False, default = db.func.current_timestamp(), server_default=text('CURRENT_TIMESTAMP'))
     updated_at = db.Column(db.DateTime, nullable = False, default = db.func.current_timestamp(), server_default=text('CURRENT_TIMESTAMP'), onupdate = db.func.current_timestamp())
 
-    
+class UserSchema(Schema):
+    id = fields.Int(dump_only = True)
+    name = fields.Str()
+    email = fields.Email()
