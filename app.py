@@ -17,7 +17,7 @@ db.init_app(app)
 
 @app.route('/')
 def index():
-    return "Hello world!"
+    return "Hello world! Juan Diego"
 app.register_blueprint(user_blueprint)
 
 if __name__ == '__main__':
